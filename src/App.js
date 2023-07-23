@@ -6,6 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import RepositoryCard from './components/RepositoryCard';
 import { debounce } from 'lodash';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import SimpleHighchartsGraph from './components/SimpleHighchartsGraph';
 import ContributorsChart from './components/ContributorsChart';
@@ -15,8 +16,8 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
-  maxHeight: '90%', // Set a maximum height for the modal content
+  maxWidth: '70%',
+  maxHeight: '70%', // Set a maximum height for the modal content
   overflowY: 'auto',
   bgcolor: 'background.paper',
   border: '2px solid #000',
@@ -25,6 +26,7 @@ const style = {
 };
 
 function App() {
+
   let dtr=new Date();
   dtr.setDate(dtr.getDate()-10);
   let dtrn=dtr.toISOString().split('T')[0];
@@ -89,7 +91,14 @@ function App() {
       setData([]);
     }
   }
+  // const newfun =async (owner,repo)=>{
+  //   const dt1= await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
+  //   const fn1= await dt1.json();
+  //   console.log("now fetching graph data");
 
+  //   setGraph(fn1);
+  //   console.log(graphd);
+  // }
   const handleLoad = ()=>{
     setPage((preavPages)=>preavPages+1);
   }

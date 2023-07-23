@@ -6,8 +6,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import RepositoryCard from './components/RepositoryCard';
 import { debounce } from 'lodash';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import SimpleHighchartsGraph from './components/SimpleHighchartsGraph';
 import ContributorsChart from './components/ContributorsChart';
@@ -91,14 +89,7 @@ function App() {
       setData([]);
     }
   }
-  // const newfun =async (owner,repo)=>{
-  //   const dt1= await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
-  //   const fn1= await dt1.json();
-  //   console.log("now fetching graph data");
 
-  //   setGraph(fn1);
-  //   console.log(graphd);
-  // }
   const handleLoad = ()=>{
     setPage((preavPages)=>preavPages+1);
   }
